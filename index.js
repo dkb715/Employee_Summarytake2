@@ -1,6 +1,6 @@
-//Defined Variables
-const inquirer = require("inquirer");
 
+const inquirer = require("inquirer");
+const test = require("test")
 
 
 inquirer
