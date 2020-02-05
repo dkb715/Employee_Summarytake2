@@ -1,6 +1,6 @@
 
 const inquirer = require("inquirer");
-const test = require("test")
+const test = require("test");
 
 
 inquirer
@@ -8,19 +8,72 @@ inquirer
 
 function promptUser() {
     return inquirer.prompt([{
-        //specifies type of question
         type: "input",
-        message: "Enter your GitHub username:",
-        default: "dkb715",
+        message: "What is your name?",
         //object to call from on input to generate user specified github portfolio
-        name: "username",
-      }, 
-      {
+        name: "name",
+
+    },
+    {
+        type: "input",
+        message: "What is your ID number?",
+        //object to call from on input to generate user specified github portfolio
+        name: "id",
+    },
+    {
+        type: "input",
+        message: "What is your email address?",
+        //object to call from on input to generate user specified github portfolio
+        name: "email",
+
+    },
+    {
+        //specifies type of question
         type: "list",
-        message: "What's your favorite color?",
-        //object to call from when generating colors
-        name: "favColor",
-        choices: ['blue', 'pink', 'red', 'green']
-      }]);
-    
+        message: "What is your position?",
+        //object to call from on input to generate user specified github portfolio
+        choices: ["manager", "employee","engineer","intern"],
+        name: "position",
+
+    },
+
+    {
+        type: "input",
+        message: "What is your office number?",
+        name: "office",
+    },
+    {
+        type: "input",
+        message: "What is your github username?",
+        name: "username",
+    },
+    {
+        type: "input",
+        message: "What is your alma mater?",
+        name: "school",
+    },
+
+
+
+    ]);
+
 }
+
+promptUser()
+    .then(function ({ name, id, email, position, office, username, school }) {
+        const team = `data`
+            .get(team).then(function (res) {
+                //this will console log the users responses
+                console.log(res);
+                data = {
+                    position: res.data.name,
+                    id: res.data.id,
+                    email: res.data.email,
+                    position: res.data.position,
+                    office: res.data.office,
+                    username: res.data.username,
+                    school: res.data.school
+                }
+
+            });
+    })
