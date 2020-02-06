@@ -35,8 +35,13 @@ function promptUser() {
         choices: ["manager", "employee","engineer","intern"],
         name: "position",
 
-    },
-
+    }
+    .then (userChoice => {
+        if (userChoice === "manager") { 
+            addManager ()
+        } 
+    }),
+    
     {
         type: "input",
         message: "What is your office number?",
